@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+  <title>OnTime</title>
+</head>
+
+<body>
+  <div class="page">
+    <form action="/loginFuncionario" method="post" class="formLogin">
+      <img src="static/img/logo.png" alt="Logo OnTime" class="logo">
+      <h2>Login</h2>
+      <p>Digite os seus dados de acesso no campo abaixo.</p>
+      <label for="email">E-mail</label>
+      <input type="email" name="emailFuncionario" placeholder="Digite seu e-mail" autofocus="true" />
+      <label for="password">Senha</label>
+      <input type="password" name="senhaFuncionario" placeholder="Digite sua senha" />
+      <a href="/">Esqueci minha senha</a>
+      <input type="submit" value="Acessar" class="btn" />
+      <div class="register-link">
+        <p>Não tem uma conta? <a href="/cadastro">Registre-se</a></p>
+      </div>
+      <div class="esqueci-senha">
+        <p>Esqueceu a senha? <a href="/recuperar">Clique aqui</a></p>
+      </div>
+    </form>
+  </div>
+</body>
+
+</html>

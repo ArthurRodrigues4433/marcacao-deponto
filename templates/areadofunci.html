@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{{ url_for('static', filename='header.css') }}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+  <title>OnTime</title>
+</head>
+
+<body>
+  <header class="page">
+    <form action="areaFuncionario" method="post" class="areaFunci">
+        <nav class="navbar">
+          <div class="container">
+            <a href="" class="logo">OnTime</a>
+            <ul class="nav-list">
+              <li>Dashboard</li>
+              <li>Dashboard</li>
+            </ul>
+            <div class="campo-pesquisa">
+              <input type="text" placeholder="Pesquisar...">
+              <button type="submit"><i class="fas fa-search"></i></button>
+            </div>
+            <ul class="nav-icon">
+              <li><a href="#"><i class="fas fa-bell"></i></a></li>
+            </ul>
+            <div class="nav-perfil-funcionario">
+              <div class="perfil-funcionario">
+                <img src="{{ url_for('static', filename='img/funcionario.png') }}" alt="Foto do Funcionário">
+                <span>Nome do Funcionário</span>
+              </div>
+              <ul class="dropdown-menu">
+                <li><a href="#">Perfil</a></li>
+                <li><a href="#">Configurações</a></li>
+                <li><a href="#">Sair</a></li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+    </form>
+  </header>
+</body>
+
+</html>

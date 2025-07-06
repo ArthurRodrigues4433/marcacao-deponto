@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+  <title>OnTime</title>
+</head>
+
+<body>
+  <div class="page2">
+    <form action="/cadastroFuncionario" method="post" class="formLogin">
+      <img src="static/img/logo.png" alt="Logo OnTime" class="logo">
+      <h2>Crie sua conta</h2>
+      <p>É muito rapido criar</p>
+      
+      <label for="nome_funcionario">Nome completo</label>
+      <input type="text" name="nome_funcionario" id="nome_funcionario" placeholder="Digite seu nome completo" autofocus="true" />
+
+      <label for="dataNascimento">Data de nascimento</label>
+      <input type="date" name="dataNascimento" id="dataNascimento" placeholder="" autofocus="true" />
+      
+      <label for="emailfuncionario">E-mail</label>
+      <input type="email" name="emailfuncionario" id="emailfuncionario" placeholder="Digite seu e-mail" autofocus="true" />
+      
+      <label for="senhafuncionario">Nova Senha</label>
+      <input type="password" name="senhafuncionario" id="senhafuncionario" placeholder="Digite sua nova senha" />
+     
+      <label for="confirmPassword">Confirme sua senha</label>
+      <input type="password" name="repetirsenha" placeholder="Digite novamente sua senha" />
+
+      <input type="submit" value="Enviar" class="btn" />
+    </form>
+  </div>
+</body>
+
+</html>
