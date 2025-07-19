@@ -1,7 +1,13 @@
 [
     {
-        "nome": "piromba",
-        "email": "arthur12345@gmail.com",
+        "nome": "Arthur Rodrigues",
+        "email": "pirombapretona@gmail.com",
+        "senha": "1234",
+        "data": "2000-04-09"
+    },
+    {
+        "nome": "Kettylym Amanda",
+        "email": "arthurodrigues4433@gmail.com",
         "senha": "1234",
         "data": "2000-04-09"
     }

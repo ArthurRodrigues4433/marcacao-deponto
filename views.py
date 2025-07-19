@@ -1,5 +1,6 @@
 from main import app
 from flask import render_template,request,redirect,flash,session
+from datetime import datetime
 import json
 
 # Essa é a rota principal do aplicativo
@@ -12,8 +13,37 @@ def homepage():
 # Ela é acessada quando o usuário visita a URL '/login'
 @app.route('/areaFuncionario')
 def area_funcionario():
+    usuario_logado_id = session.get('email')
 
-    return render_template("areadofunci.html")
+    with open('clientes.json', 'r') as cliente_json:
+        dados = json.load(cliente_json)
+
+        funcionario = next(
+            (item for item in dados if item['email'] == usuario_logado_id),
+            None
+        )
+
+        nome_funcionario = funcionario['nome'] if dados else "Funcionário"
+
+   
+    return render_template('areadofunci.html', name=nome_funcionario)
+
+
+# Rota que recebe o clique do botão
+@app.route('/marcar_ponto', methods=['POST'])
+def marcar_ponto():
+    # Obtém o horário atualagora = datetime.now()
+    agora = datetime.now()
+    data = agora.strftime('%Y/%m/%d')
+    hora = agora.strftime('%H:%M:%S')
+
+    # Salva num arquivo (opcional)
+    with open('pontos.json', 'a') as f:
+        f.write(f'Ponto marcado em: {data} {hora}\n')
+
+    # Passa o valor para o template
+    return render_template('areadofunci.html', horario_marcado=hora)
+
 
 
 # Essa rota renderiza a página de login do cliente
@@ -36,11 +66,11 @@ def login_funcionario():
             cont += 1
 
             if email == usuario['email'] and senha == usuario['senha']:
+                session['email'] = usuario['email']
                 return redirect('/areaFuncionario')
             if cont >= len(listaDeFuncionarios):
                 return redirect('/')
                   
-
 
 # Essa rota renderiza a página de cadastro do cliente
 # Ela é acessada quando o usuário visita a URL '/cadastro'

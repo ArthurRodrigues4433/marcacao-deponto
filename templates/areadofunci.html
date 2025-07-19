@@ -1,47 +1,88 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Painel de Ponto - Funcionário</title>
   <link rel="stylesheet" href="{{ url_for('static', filename='header.css') }}">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-
-  <title>OnTime</title>
 </head>
-
 <body>
-  <header class="page">
-    <form action="areaFuncionario" method="post" class="areaFunci">
-        <nav class="navbar">
-          <div class="container">
-            <a href="" class="logo">OnTime</a>
-            <ul class="nav-list">
-              <li>Dashboard</li>
-              <li>Dashboard</li>
-            </ul>
-            <div class="campo-pesquisa">
-              <input type="text" placeholder="Pesquisar...">
-              <button type="submit"><i class="fas fa-search"></i></button>
-            </div>
-            <ul class="nav-icon">
-              <li><a href="#"><i class="fas fa-bell"></i></a></li>
-            </ul>
-            <div class="nav-perfil-funcionario">
-              <div class="perfil-funcionario">
-                <img src="{{ url_for('static', filename='img/funcionario.png') }}" alt="Foto do Funcionário">
-                <span>Nome do Funcionário</span>
-              </div>
-              <ul class="dropdown-menu">
-                <li><a href="#">Perfil</a></li>
-                <li><a href="#">Configurações</a></li>
-                <li><a href="#">Sair</a></li>
-              </ul>
-            </div>
+  <aside class="sidebar">
+    <div class="logo-area">
+      <img src="static/img/logo.png" alt="Logo fictícia" class="logo">
+      <span class="brand">OnTime</span>
+    </div>
+    <input type="text" placeholder="Buscar..." class="searchbox">
+    <nav>
+      <ul>
+        <li><a href="#">Painel</a></li>
+        <li><a href="#">Frequência</a></li>
+        <li><a href="#">Relatórios</a></li>
+        <li><a href="#">Configurações</a></li>
+      </ul>
+    </nav>
+  </aside>
+  <div class="main-content">
+    <header class="topbar">
+      <div>
+        <span class="page-title">Marcação de Ponto</span>
+      </div>
+      <div class="user-info">
+        <span class="user-name">{{ name }}</span>
+        <img src="https://i.pravatar.cc/36?img=4" class="avatar" alt="Avatar do Funcionário">
+      </div>
+    </header>
+    <main>
+      <div class="attendance-card">
+        <div class="profile-section">
+          <img src="https://i.pravatar.cc/80?img=4" class="profile-photo" alt="Foto do Funcionário">
+          <h2> {{ name }} </h2>
+        </div>
+        <div class="schedule-section">
+          <div class="checkpoint">
+            <div class="circle">1ª</div>
+            <span class="time">{{horario_marcado}}</span>
+            <span class="label">Entrada Prevista</span>
           </div>
-        </nav>
-    </form>
-  </header>
+          <div class="line"></div>
+          <div class="checkpoint">
+            <div class="circle">2ª</div>
+            <span class="time"></span>
+            <span class="label">Saída Intervalo</span>
+          </div>
+          <div class="line"></div>
+          <div class="checkpoint">
+            <div class="circle">3ª</div>
+            <span class="time"></span>
+            <span class="label">Volta Intervalo</span>
+          </div>
+          <div class="line"></div>
+          <div class="checkpoint">
+            <div class="circle">4ª</div>
+            <span class="time"></span>
+            <span class="label">Saída Prevista</span>
+          </div>
+        </div>
+        <div class="clock-section">
+          <span class="clock" id="live-clock">--:--:--</span>
+        </div>
+        <form action="/marcar_ponto" method="post" class="mark-form">
+          <button class="mark-btn" type="submit">Marcar Ponto</button>
+        </form>
+      </div>
+    </main>
+  </div>
+  <script>
+    // Relógio ao vivo
+    function updateClock() {
+      const now = new Date();
+      const h = String(now.getHours()).padStart(2,'0');
+      const m = String(now.getMinutes()).padStart(2,'0');
+      const s = String(now.getSeconds()).padStart(2,'0');
+      document.getElementById('live-clock').innerText = `${h}:${m}:${s}`;
+    }
+    setInterval(updateClock, 1000);
+    updateClock();
+  </script>
 </body>
-
 </html>

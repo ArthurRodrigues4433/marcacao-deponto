@@ -1,188 +1,210 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
-
 body {
-    font-family: 'Inter', sans-serif;
-    margin: 0;
-    padding: 0;
-    color: #023047
+  background: linear-gradient(135deg, #0b2447 0%, #19376d 100%);
+  font-family: 'Segoe UI', Arial, sans-serif;
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .page {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    align-content: center;
-    justify-content: center;
-    width: 100%;
-    height: 100vh;
-    background-color: #847d91;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .formLogin {
-    display: flex;
-    flex-direction: column;
-    background-color: #fff;
-    border-radius: 7px;
-    padding: 40px;
-    box-shadow: 10px 10px 40px rgba(0, 0, 0, 0.4);
-    gap: 5px
+  background: #fff;
+  padding: 2.5rem 2rem;
+  border-radius: 12px;
+  box-shadow: 0 6px 24px rgba(11, 36, 71, 0.15);
+  width: 350px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.formLogin h1{
-    padding: 0;
-    margin: 0;
-    font-weight: 500;
-    font-size: 2.3em;
+.logo {
+  width: 110px;
+  margin-bottom: 1.2rem;
 }
 
-.formLogin img{
-    display: block;
-    margin: 0 auto 30px;
-    width: 200px;
-    height:auto;
+.formLogin h2 {
+  margin: 0 0 0.7rem 0;
+  color: #19376d;
+  font-size: 2rem;
+  letter-spacing: 1px;
 }
 
 .formLogin p {
-    display: inline-block;
-    font-size: 14px;
-    color: #666;
-    margin-bottom: 25px;
-}
-
-.formLogin input {
-    padding: 15px;
-    font-size: 14px;
-    border: 1px solid #ccc;
-    margin-bottom: 20px;
-    margin-top: 5px;
-    border-radius: 4px;
-    transition: all linear 160ms;
-    outline: none;
-}
-
-
-.formLogin input:focus {
-    border: 1px solid #569e4f;
+  color: #222;
+  font-size: 1rem;
+  margin-bottom: 1.2rem;
+  text-align: center;
 }
 
 .formLogin label {
-    font-size: 14px;
-    font-weight: 600;
+  align-self: flex-start;
+  margin-bottom: 0.3rem;
+  font-weight: 500;
+  color: #19376d;
+  font-size: 0.98rem;
+}
+
+.formLogin input[type="email"],
+.formLogin input[type="password"] {
+  width: 100%;
+  padding: 0.7rem 1rem;
+  border: 1px solid #19376d33;
+  border-radius: 7px;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  outline: none;
+  transition: border 0.2s;
+}
+
+.formLogin input[type="email"]:focus,
+.formLogin input[type="password"]:focus {
+  border-color: #19376d;
 }
 
 .formLogin a {
-    display: inline-block;
-    margin-bottom: 20px;
-    font-size: 13px;
-    color: #555;
-    transition: all linear 160ms;
+  color: #576cbc;
+  text-decoration: none;
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
+  transition: color 0.2s;
 }
 
 .formLogin a:hover {
-    color: #569e4f;
+  color: #19376d;
+  text-decoration: underline;
 }
 
 .btn {
-    background-color: #569e4f;
-    color: #fff;
-    font-size: 14px;
-    font-weight: 600;
-    border: none !important;
-    transition: all linear 160ms;
-    cursor: pointer;
-    margin: 0 !important;
-
+  width: 100%;
+  padding: 0.8rem;
+  background: #19376d;
+  color: #fff;
+  border: none;
+  border-radius: 7px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+  transition: background 0.2s;
 }
 
 .btn:hover {
-    transform: scale(1.05);
-    background-color: #569e4f;
+  background: #576cbc;
 }
 
+.register-link,
+.esqueci-senha {
+  margin-top: 0.2rem;
+  text-align: center;
+}
+
+.register-link p,
+.esqueci-senha p {
+  font-size: 0.95rem;
+  color: #555;
+}
+
+.register-link a,
+.esqueci-senha a {
+  color: #19376d;
+  font-weight: bold;
+}
+
+.page,
 .page2 {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    align-content: center;
-    justify-content: center;
-    width: 100%;
-    height: 100vh;
-    background-color: #847d91;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .formLogin {
-    display: flex;
-    flex-direction: column;
-    background-color: #fff;
-    border-radius: 7px;
-    padding: 50px;
-    width: 600px;
-    box-shadow: 10px 10px 40px rgba(0, 0, 0, 0.4);
-    gap: 5px
+  background: #fff;
+  padding: 2.5rem 2rem;
+  border-radius: 12px;
+  box-shadow: 0 6px 24px rgba(11, 36, 71, 0.15);
+  width: 350px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.formLogin h2{
-    text-align: center;
-    padding: 0;
-    margin: 0;
-    font-weight: 500;
-    font-size: 2.3em;
+.logo {
+  width: 110px;
+  margin-bottom: 1.2rem;
+}
+
+.formLogin h2 {
+  margin: 0 0 0.7rem 0;
+  color: #19376d;
+  font-size: 2rem;
+  letter-spacing: 1px;
 }
 
 .formLogin p {
-    display: inline-block;
-    font-size: 14px;
-    color: #666;
-    margin-bottom: 25px;
-    text-align: center;
-}
-
-.formLogin input {
-    padding: 15px;
-    font-size: 14px;
-    border: 1px solid #ccc;
-    margin-bottom: 20px;
-    margin-top: 5px;
-    border-radius: 4px;
-    transition: all linear 160ms;
-    outline: none;
-}
-
-
-.formLogin input:focus {
-    border: 1px solid #569e4f;
+  color: #222;
+  font-size: 1rem;
+  margin-bottom: 1.2rem;
+  text-align: center;
 }
 
 .formLogin label {
-    font-size: 14px;
-    font-weight: 600;
+  align-self: flex-start;
+  margin-bottom: 0.3rem;
+  font-weight: 500;
+  color: #19376d;
+  font-size: 0.98rem;
 }
 
-.formLogin a {
-    display: inline-block;
-    margin-bottom: 20px;
-    font-size: 13px;
-    color: #555;
-    transition: all linear 160ms;
+.formLogin input[type="text"],
+.formLogin input[type="date"],
+.formLogin input[type="email"],
+.formLogin input[type="password"] {
+  width: 100%;
+  padding: 0.7rem 1rem;
+  border: 1px solid #19376d33;
+  border-radius: 7px;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  outline: none;
+  transition: border 0.2s;
+  box-sizing: border-box;
 }
 
-.formLogin a:hover {
-    color: #569e4f;
+.formLogin input[type="text"]:focus,
+.formLogin input[type="date"]:focus,
+.formLogin input[type="email"]:focus,
+.formLogin input[type="password"]:focus {
+  border-color: #19376d;
 }
 
 .btn {
-    background-color: #569e4f;
-    color: #fff;
-    font-size: 14px;
-    font-weight: 600;
-    border: none !important;
-    transition: all linear 160ms;
-    cursor: pointer;
-    margin: 0 !important;
-
+  width: 100%;
+  padding: 0.8rem;
+  background: #19376d;
+  color: #fff;
+  border: none;
+  border-radius: 7px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  transition: background 0.2s;
 }
 
 .btn:hover {
-    transform: scale(1.05);
-    background-color: #569e4f;
+  background: #576cbc;
 }

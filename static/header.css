@@ -1,15 +1,370 @@
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #BEBEBE;
+  margin: 0;
+  top: 0;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: linear-gradient(135deg, #0b2447 0%, #19376d 100%);
+  min-height: 100vh;
+  display: flex;
+  color: #222;
 }
 
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-direction: ;
+.sidebar {
+  background: #19376d;
+  color: #fff;
+  width: 240px;
+  min-height: 100vh;
+  padding: 2rem 1rem;
+  box-shadow: 0 4px 24px rgba(11, 36, 71, 0.08);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.logo-area {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.logo {
+  width: 48px;
+  height: 48px;
+  margin-right: 0.7rem;
+}
+
+.brand {
+  font-size: 1.7rem;
+  font-weight: bold;
+  color: #fff;
+  letter-spacing: 1px;
+}
+
+.searchbox {
+  width: 90%;
+  padding: 0.6rem 1rem;
+  border-radius: 7px;
+  border: none;
+  margin-bottom: 2rem;
+  font-size: 1rem;
+  background: #fff;
+  color: #19376d;
+  box-shadow: 0 2px 8px rgba(11,36,71, 0.07);
+  outline: none;
+  transition: box-shadow 0.2s;
+}
+
+.searchbox:focus {
+  box-shadow: 0 2px 16px rgba(87, 108, 188, 0.15);
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+nav ul li {
+  margin-bottom: 1.2rem;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.09rem;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  display: block;
+  transition: background 0.15s, color 0.15s;
+}
+
+nav ul li a:hover {
+  background: #576cbc;
+  color: #fff;
+}
+
+.main-content {
+  flex: 1;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.topbar {
+  width: auto;
+  height: 68px;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(11,36,71, 0.09);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2.5rem;
+}
+
+.page-title {
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: #19376d;
+  letter-spacing: 1px;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.user-name {
+  font-size: 1rem;
+  color: #19376d;
+  font-weight: 500;
+}
+
+.avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 2px solid #19376d;
+  object-fit: cover;
+}
+
+main {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+}
+
+.attendance-card {
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 4px 24px rgba(11, 36, 71, 0.11);
+  padding: 2.5rem 2.2rem;
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.profile-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 1.4rem;
+}
+
+.profile-photo {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 3px solid #19376d;
+  object-fit: cover;
+  margin-bottom: 0.8rem;
+}
+
+.profile-section h2 {
+  margin: 0;
+  font-size: 1.25rem;
+  color: #19376d;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.schedule-section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 1.3rem;
+}
+
+.checkpoint {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 0.3rem;
+}
+
+.circle {
+  width: 32px;
+  height: 32px;
+  background: #576cbc;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-weight: bold;
+  font-size: 1.05rem;
+  margin-right: 0.3rem;
+  box-shadow: 0 2px 8px rgba(87, 108, 188, 0.08);
+}
+
+.time {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #19376d;
+  min-width: 64px;
+  text-align: center;
+}
+
+.label {
+  font-size: 0.98rem;
+  color: #555;
+}
+
+.line {
+  height: 18px;
+  border-left: 2px dashed #576cbc55;
+  margin-left: 16px;
+  margin-bottom: 0.1rem;
+}
+
+.clock-section {
+  margin: 1.2rem 0 1rem 0;
+}
+
+.clock {
+  font-size: 2.1rem;
+  font-weight: bold;
+  color: #19376d;
+  letter-spacing: 2px;
+  background: #f3f6fd;
+  border-radius: 7px;
+  padding: 0.5rem 1.4rem;
+  box-shadow: 0 2px 8px rgba(11,36,71, 0.05);
+}
+
+.mark-form {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.mark-btn {
+  padding: 0.9rem 2.2rem;
+  background: #19376d;
+  color: #fff;
+  border: none;
+  border-radius: 7px;
+  font-size: 1.08rem;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 0.6rem;
+  transition: background 0.2s;
+  box-shadow: 0 2px 8px rgba(87,108,188,0.07);
+}
+
+.mark-btn:hover {
+  background: #576cbc;
+}
+
+/* Responsividade */
+@media (max-width: 900px) {
+  body {
+    
+    flex-direction: column;
+  }
+  .sidebar {
+    min-width: 100%;
+    min-height: 0;
+    flex-direction: row;
+    padding: 18px 10px;
+    box-shadow: none;
+    position: static;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+  .logo-area {
+    margin-bottom: 0;
+    margin-right: 1rem;
+  }
+  nav ul {
+    flex-direction: row;
+    gap: 16px;
+    width: auto;
+  }
+  nav ul li {
+    margin-bottom: 0;
+  }
+  .main-content {
+    padding: 0 8px;
+    min-height: auto;
     width: 100%;
-    height: 100vh;
+  }
+  .attendance-card {
+    width: 100%;
+    min-width: 0;
+    max-width: 99vw;
+    padding: 18px 4vw;
+  }
+
+  .searchbox {
+    display: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .topbar {
+    flex-direction: column;
+    height: auto;
+    padding: 8px 8px;
+    gap: 8px;
+  }
+  .main-content {
+    padding: 0 2px;
+  }
+  .attendance-card {
+    max-width: 99vw;
+    padding: 12px 2vw;
+    font-size: 0.95rem;
+  }
+  .schedule-section {
+    gap: 8px;
+  }
+  .sidebar {
+    width: 100%;
+    min-height: 0;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 12px 4vw;
+    box-shadow: none;
+  }
+  .logo-area {
+    margin-bottom: 1rem;
+    margin-right: 0;
+  }
+  nav ul {
+    flex-direction: column;
+    gap: 0;
+    width: 100%;
+  }
+}
+
+@media (max-width: 400px) {
+  .attendance-card {
+    padding: 8px 1vw;
+    font-size: 0.9rem;
+  }
+  .profile-photo {
+    width: 60px;
+    height: 60px;
+  }
+  .sidebar {
+    padding: 8px 2vw;
+  }
+  .topbar {
+    padding: 4px 4px;
+  }
+  .clock {
+    font-size: 1.4rem;
+    padding: 0.4rem 1rem;
+  }
 }
