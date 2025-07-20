@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Painel de Ponto - Funcionário</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='frequencia.css') }}">
+</head>
+<body>
+  <aside class="sidebar">
+    <div class="logo-area">
+      <img src="static/img/logo.png" alt="Logo fictícia" class="logo">
+      <span class="brand">OnTime</span>
+    </div>
+    <input type="text" placeholder="Buscar..." class="searchbox">
+    <nav>
+      <ul>
+        <li><a href="/areaFuncionario">Painel</a></li>
+        <li><a href="/frequencia">Frequência</a></li>
+        <li><a href="#">Relatórios</a></li>
+        <li><a href="#">Configurações</a></li>
+      </ul>
+    </nav>
+  </aside>
+
+  <div class="main-content">
+    <header class="topbar">
+      <div>
+        <span class="page-title">Marcação de Ponto</span>
+      </div>
+      <div class="user-info">
+        <span class="user-name">{{ name }}</span>
+        <img src="https://i.pravatar.cc/36?img=4" class="avatar" alt="Avatar do Funcionário">
+      </div>
+    </header>
+
+    <div class="content">
+    <div class="frequencia-box">
+      <h2>Registro de Frequência</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Data</th>
+            <th>Entrada</th>
+            <th>Saída Intervalo</th>
+            <th>Volta Intervalo</th>
+            <th>Saída</th>
+          </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td></td>
+                <td>{% set ponto = pontos_dia[0] if pontos_dia|length > 0 else None %}
+                    {{ ponto.hora if ponto else '--:--:--' }}</td>
+                <td>{% set ponto = pontos_dia[1] if pontos_dia|length > 1 else None %}
+                    {{ ponto.hora if ponto else '--:--:--' }}</td>
+                <td>{% set ponto = pontos_dia[2] if pontos_dia|length > 2 else None %}
+                    {{ ponto.hora if ponto else '--:--:--' }}</td>
+                <td>{% set ponto = pontos_dia[3] if pontos_dia|length > 3 else None %}
+                    {{ ponto.hora if ponto else '--:--:--' }}</td>
+            </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+</body>
+</html>
